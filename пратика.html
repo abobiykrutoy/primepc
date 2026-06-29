@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRIME</title>
+    <link rel="icon" type="image/png" href="Group_1.png">
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Etude Noire', sans-serif; 
+            font-family: 'J Audio Cassette', sans-serif;
+            background-color: #152b3a;        
+            color: #ffffff;                     
+            line-height: 1.6;
+            overflow-x: hidden;            
+        }
+
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background:
+        linear-gradient(135deg, rgba(8, 12, 25, 0.85) 0%, rgba(0, 0, 0, 0.7) 100%),
+        url('87036f4a08bb520b4425860805ab056941da6671.png');
+    background-size: cover;          
+    background-position: center;    
+    background-repeat: no-repeat;     
+    position: relative;             
+}
+        .header {
+            display: flex;
+            justify-content: space-between;   
+            align-items: center;           
+            padding: 15px 60px;             
+            width: 100%;
+            position: fixed;
+            z-index: 10;                 
+            
+     
+            background: linear-gradient(135deg, #91E8DD 0%, #574592 100%);
+            backdrop-filter: blur(8px);      
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+        }
+
+      
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 80px;
+    width: auto;
+    display: block;
+}
+
+  
+        .nav {
+            display: flex;
+            gap: 40px;                       
+            list-style: none;             
+        }
+
+        .nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-family: 'Etude Noire';
+            font-weight: 500;
+            font-size: 16px;
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
+            letter-spacing: 0.3px;
+        }
+        .nav a:hover {
+            opacity: 1;                     
+        }
+
+
+        .hero-content {
+            flex: 1;                     
+            display: flex;
+            flex-direction: column;
+            justify-content: center;          
+            align-items: center;             
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 5;                   
+            max-width: 900px;              
+            margin: 0 auto;           
+        }
+
+
+        .hero-content h1 {
+            font-family: 'Etude Noire', sans-serif;
+            font-weight: 900;
+            font-size: clamp(48px, 10vw, 96px); 
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            -webkit-background-clip: text;    
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(74, 158, 255, 0.2); 
+        }
+        .gradient-text {
+    background: #574592;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 40px rgba(106, 29, 110, 0.3);
+}
+.white-text {
+    color: #ffffff;
+    -webkit-text-fill-color: #ffffff;
+}
+
+
+        .hero-content p {
+            font-size: clamp(18px, 2.5vw, 24px);
+            font-weight: 400;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #e0e8f5;
+        }
+
+
+        .section {
+            background-color: #100C1D;
+            color: #0b1a2b;
+            padding: 80px 60px;
+        }
+        .section1 {
+            background-color: #00000000;
+            color: #00000000;
+            padding: 80px 60px;
+        }
+
+        .section h2 {
+            font-family: 'J Audio Cassette', sans-serif;
+            font-weight: 700;
+            font-size: 50px;
+            margin-bottom: 24px;
+            color: #91E8DD;
+        }
+        .section img {
+            align-items: end;
+        }
+
+        .section p {
+            text-align: right;
+            margin-right: 40px;
+            font-size: 40px;
+            line-height: 1.8;
+            color: #ffffff;
+        }
+        .abouttext {
+            text-align: right;
+            margin-right: 40px;
+        }
+
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;     
+                gap: 16px;
+                padding: 20px 24px;
+            }
+
+            .nav {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-content h1 {
+                font-size: 38px;     
+            }
+
+            .section {
+                padding: 50px 24px;
+            }
+        }
+        @font-face {
+    font-family: 'Etude Noire';
+    src: url('fonts/EtudeNoire-Regular.ttf') format('truetype');
+    font-weight: 400; 
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Etude Noire';
+    src: url('fonts/EtudeNoire-Bold.ttf') format('truetype');
+    font-weight: 700; 
+    font-style: normal;
+}
+.btn-book {
+    display: inline-block;
+    padding: 16px 48px;
+    background: transparent;
+    border: 2px solid #91E8DD;
+    color: #ffffff;
+    font-family: 'J Audio Cassette', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background 0.5s ease, box-shadow 0.5s ease, transform 0.3s ease;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.btn-book:hover {
+    background: linear-gradient(135deg, #91E8DD 0%, #574592 100%);
+    border-color: #574592;     
+    box-shadow: 0 8px 30px rgba(106, 29, 110, 0.4);
+    transform: translateY(-3px);
+}
+.section-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px;
+    min-height: 10px;
+    background: linear-gradient(135deg, #574592 0%, #91E8DD 100%);
+}
+.divider-pattern {
+    display: flex;
+    justify-content: bottom;     
+    gap: 190px;             
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    position: bottom;
+}
+.pattern-img {
+    height: 40px;  
+    width: auto;       
+    display: block;
+    position: bottom;
+    opacity: 0.8;          
+}
+.container {
+  margin-left: 0; 
+  margin-right: auto;
+}
+#about {
+    background-size: cover;      
+    background-position: center;  
+    background-repeat: no-repeat; 
+}
+.service {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.gaper {
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    flex-wrap: wrap;
+}
+.tarif {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+.contacts {
+    font-family: 'J Audio Cassette', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    color: #474c55;
+
+}
+.logcontact {
+    display: flex;
+    align-items: center;
+}
+.contactback {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 100px;
+    min-height: 10px;
+    background: linear-gradient(135deg, #574592 0%, #91E8DD 100%);
+}
+.con {
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    flex-wrap: wrap-reverse;
+}
+    </style>
+</head>
+<body>
+
+
+
+<section class="hero" id="home">
+<header class="header">
+    <div class="logo">
+        <img src="Group_1.png" alt="prime" class="logo-img">
+        </div>
+    </div>
+    
+    <ul class="nav">
+        <li><a href="#home">Главная</a></li>
+        <li><a href="#about">О клубе</a></li>
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#tarifi">Тарифы</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+    </ul>
+    
+</header>
+    <div class="hero-content">
+         <h1>
+        <span class="gradient-text">PRIME</span>
+        <span class="white-text">— ТВОЕ ПРОСТРАНСТВО ДЛЯ ИГР</span>
+    </h1>
+        <a href="#tarifi" class="btn-book">Забронировать</a>
+    </div>
+</section>
+<div class="section-divider">
+    <div class="divider-pattern">
+        <img src="Vector.png" alt="" class="pattern-img">
+        <img src="Vector.png" alt="" class="pattern-img">
+        <img src="Vector.png" alt="" class="pattern-img">
+        <img src="Vector.png" alt="" class="pattern-img">
+        <img src="Vector.png" alt="" class="pattern-img">
+        <img src="Vector.png" alt="" class="pattern-img">
+        <img src="Vector.png" alt="" class="pattern-img">
+    </div>
+</div>
+<section class="section" id="about" style="background-image: url('Group_3.png');">
+    <div class="abouttext"><h2>О клубе</h2></div>
+    <p>&nbsp;</p>
+    <p>Комфорт. Технологии. Атмосфера</p>
+    <p>&nbsp;</p>
+    <p>PRIME - это больше, чем просто игры.<br> Мы создали пространство, где мощное железо<br> и уютная атмосфера объединяются<br> в идеальные условия для игры и отдыха</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    
+</section>
+<div class="section-divider">
+    <div class="divider-pattern">
+        <img src="Vector.png" alt="" class="pattern-img">
+        <img src="Vector.png" alt="" class="pattern-img">
+        <img src="Vector.png" alt="" class="pattern-img">
+        <img src="Vector.png" alt="" class="pattern-img">
+        <img src="Vector.png" alt="" class="pattern-img">
+        <img src="Vector.png" alt="" class="pattern-img">
+        <img src="Vector.png" alt="" class="pattern-img">
+    </div>
+</div>
+<section class="section" id="services">
+    <div class="service"><h2>Наши услуги</h2></div>
+    <div class="gaper">
+            <img src="Group_5.png" alt="" class="service">
+
+            <img src="Group_4.png" alt="" class="service">
+
+            <img src="Group_6.png" alt="" class="service">
+</div>
+</section>
+<div class="section-divider">
+    <div class="divider-pattern">
+        <img src="Vector.png" alt="" class="pattern-img">
+        <img src="Vector.png" alt="" class="pattern-img">
+        <img src="Vector.png" alt="" class="pattern-img">
+        <img src="Vector.png" alt="" class="pattern-img">
+        <img src="Vector.png" alt="" class="pattern-img">
+        <img src="Vector.png" alt="" class="pattern-img">
+        <img src="Vector.png" alt="" class="pattern-img">
+    </div>
+</div>
+<section class="section" id="tarifi">
+    <div class="service"><h2>Тарифы</h2></div>
+    <div class="tarif"><img src="Group_9.png" width="350" height="400" alt="" class="тарифы">
+    <img src="Group_8.png" width="350" height="400" alt="" class="тарифы">
+    <img src="Group_10.png" width="350" height="400" alt="" class="тарифы">
+    <img src="Group_7.png" width="350" height="400" alt="" class="тарифы"></div>
+
+
+</section>
+<div class="section-divider">
+    <div class="divider-pattern">
+        <img src="Vector.png" alt="" class="pattern-img">
+        <img src="Vector.png" alt="" class="pattern-img">
+        <img src="Vector.png" alt="" class="pattern-img">
+        <img src="Vector.png" alt="" class="pattern-img">
+        <img src="Vector.png" alt="" class="pattern-img">
+        <img src="Vector.png" alt="" class="pattern-img">
+        <img src="Vector.png" alt="" class="pattern-img">
+    </div>
+</div>
+<div class="contactback">
+<section class="section1" id="contacts"><div class="con">
+    <img src="Group 12.png" width="450" height="170">
+    <img src="Group 13.png" width="450" height="170">
+    <img src="Group 11.png" width="700" height="170">
+</div>
+</div>
+</section>
+
+
+</body>
+</html>
